@@ -1,6 +1,6 @@
 FROM jekyll/jekyll:pages
 
-COPY Gemfile /srv/jekyll/
+#COPY Gemfile /srv/jekyll/
 
 WORKDIR /srv/jekyll
 
