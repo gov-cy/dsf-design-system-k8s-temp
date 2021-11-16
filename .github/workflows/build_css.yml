@@ -1,8 +1,9 @@
 on:
   push:
-    branches:
-      - src-pages
+    branches: [ main ]
 
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build_css:
