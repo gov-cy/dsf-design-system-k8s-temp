@@ -59,19 +59,3 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-      
-      #Compile CSS from SCSS files
-      - name: Make destination directory for compiled CSS
-        run: mkdir -vp tmp/assets/css
-
-      - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.4.7
-        with:
-          source: src/sass/main.scss
-          destination: tmp/assets/css/main.css
-
-      - name: Upload Complied CSS
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: Compiled-CSS
-          path: tmp/assets/css
