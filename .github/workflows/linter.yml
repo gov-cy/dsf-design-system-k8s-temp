@@ -49,8 +49,11 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
+          # Check only src folder (not working?)
           FILTER_REGEX_INCLUDE: .*src/.*
-          #VALIDATE_ALL_CODEBASE: false
+          FILTER_REGEX_EXCLUDE: .*node_modules/.*
+          # KK - Only new files will be checked if false.   
+          VALIDATE_ALL_CODEBASE: true
           VALIDATE_SHELL_SHFMT: true
           VALIDATE_CSS: true
           VALIDATE_DOCKERFILE: true
