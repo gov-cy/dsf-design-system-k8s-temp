@@ -64,7 +64,7 @@ jobs:
         uses: Azure/k8s-set-context@v1.1
         with:
           method: kubeconfig
-          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+          kubeconfig: ${{ secrets.AKS_KUBE_CONFIG }}
 
       - name: Run a multi-line script
         run: |
